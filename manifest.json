@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+  "name": "Auth Steps Recorder",
+  "version": "1.0",
+  "description": "This extension records the steps taken to authenticate to a particular website.",
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
